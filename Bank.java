@@ -94,4 +94,13 @@ public class Bank {
         }
         return "Account not found";
     }
+    
+    public Account findAccountByHolder(String holderName) {
+        for (int i = 0; i < count; i++) {
+            if (accounts[i].getHolderName().equalsIgnoreCase(holderName)) {
+                return accounts[i];
+            }
+        }
+        return null;
+    }
 }
