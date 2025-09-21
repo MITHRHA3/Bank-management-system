@@ -76,6 +76,10 @@ public class Bank {
         return count >= accounts.length;
     }
     
+    public boolean isEmpty() {
+        return count == 0;
+    }
+    
     public String getAccountInfo(String accountNumber) {
         Account account = findAccount(accountNumber);
         if (account != null) {
