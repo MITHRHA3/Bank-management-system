@@ -80,4 +80,8 @@ public class Account {
     public String getAccountDetails() {
         return "Account: " + accountNumber + ", Holder: " + holderName + ", Balance: " + getBalanceString();
     }
+    
+    public boolean canTransfer(double amount) {
+        return amount > 0 && amount <= balance && amount <= 5000;
+    }
 }
