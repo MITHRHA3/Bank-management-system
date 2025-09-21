@@ -21,8 +21,16 @@ public class Main {
             
             switch (choice) {
                 case 1:
+                    if (bank.isFull()) {
+                        System.out.println("Bank is full! Cannot create more accounts.");
+                        break;
+                    }
                     System.out.print("Account Number: ");
                     String accNum = scanner.nextLine();
+                    if (bank.accountExists(accNum)) {
+                        System.out.println("Account already exists!");
+                        break;
+                    }
                     System.out.print("Holder Name: ");
                     String name = scanner.nextLine();
                     System.out.print("Initial Deposit: ");
