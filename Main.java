@@ -14,7 +14,8 @@ public class Main {
             System.out.println("6. View Account Details");
             System.out.println("7. Total Balance");
             System.out.println("8. Average Balance");
-            System.out.println("9. Exit");
+            System.out.println("9. Richest Account");
+            System.out.println("10. Exit");
             System.out.print("Choose: ");
             
             int choice = scanner.nextInt();
@@ -98,6 +99,14 @@ public class Main {
                     System.out.println("Average Balance: $" + String.format("%.2f", bank.getAverageBalance()));
                     break;
                 case 9:
+                    Account richest = bank.getHighestBalanceAccount();
+                    if (richest != null) {
+                        System.out.println("Richest Account: " + richest.getAccountSummary());
+                    } else {
+                        System.out.println("No accounts found!");
+                    }
+                    break;
+                case 10:
                     System.out.println("Goodbye!");
                     System.exit(0);
                     break;
