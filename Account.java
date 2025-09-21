@@ -64,4 +64,8 @@ public class Account {
     public String getAccountSummary() {
         return accountNumber + " - " + holderName + " - " + getBalanceString();
     }
+    
+    public boolean isValidAccountNumber() {
+        return accountNumber != null && accountNumber.length() >= 3;
+    }
 }
