@@ -63,4 +63,8 @@ public class Bank {
         }
         return total;
     }
+    
+    public boolean accountExists(String accountNumber) {
+        return findAccount(accountNumber) != null;
+    }
 }
