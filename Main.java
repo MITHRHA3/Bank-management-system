@@ -11,8 +11,9 @@ public class Main {
             System.out.println("3. Withdraw");
             System.out.println("4. Transfer");
             System.out.println("5. List Accounts");
-            System.out.println("6. Total Balance");
-            System.out.println("7. Exit");
+            System.out.println("6. View Account Details");
+            System.out.println("7. Total Balance");
+            System.out.println("8. Exit");
             System.out.print("Choose: ");
             
             int choice = scanner.nextInt();
@@ -68,9 +69,19 @@ public class Main {
                     bank.listAccounts();
                     break;
                 case 6:
-                    System.out.println("Total Balance: $" + bank.getTotalBalance());
+                    System.out.print("Account Number: ");
+                    String accNum4 = scanner.nextLine();
+                    Account acc = bank.findAccount(accNum4);
+                    if (acc != null) {
+                        acc.displayDetails();
+                    } else {
+                        System.out.println("Account not found!");
+                    }
                     break;
                 case 7:
+                    System.out.println("Total Balance: $" + bank.getTotalBalance());
+                    break;
+                case 8:
                     System.out.println("Goodbye!");
                     System.exit(0);
                     break;
