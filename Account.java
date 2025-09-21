@@ -46,4 +46,10 @@ public class Account {
         }
         return false;
     }
+    
+    public void displayDetails() {
+        System.out.println("Account: " + accountNumber);
+        System.out.println("Holder: " + holderName);
+        System.out.println("Balance: $" + balance);
+    }
 }
