@@ -76,4 +76,8 @@ public class Account {
     public boolean isValidHolderName() {
         return holderName != null && holderName.length() >= 2;
     }
+    
+    public String getAccountDetails() {
+        return "Account: " + accountNumber + ", Holder: " + holderName + ", Balance: " + getBalanceString();
+    }
 }
