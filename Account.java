@@ -56,4 +56,8 @@ public class Account {
     public String getBalanceString() {
         return String.format("$%.2f", balance);
     }
+    
+    public boolean hasSufficientBalance(double amount) {
+        return balance >= amount;
+    }
 }
