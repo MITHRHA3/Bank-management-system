@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Bank bank = new Bank();
-        Scanner scanner = new Scanner(System.in);
+        Bank bank=new Bank();
+        Scanner scanner=new Scanner(System.in);
         
         while (true) {
             System.out.println("1. Create Account");
@@ -29,23 +29,23 @@ public class Main {
                         break;
                     }
                     System.out.print("Account Number: ");
-                    String accNum = scanner.nextLine();
+                    String accNum=scanner.nextLine();
                     if (bank.accountExists(accNum)) {
                         System.out.println("Account already exists!");
                         break;
                     }
                     System.out.print("Holder Name: ");
-                    String name = scanner.nextLine();
+                    String name=scanner.nextLine();
                     System.out.print("Initial Deposit: ");
-                    double deposit = scanner.nextDouble();
+                    double deposit=scanner.nextDouble();
                     bank.createAccount(accNum, name, deposit);
                     System.out.println("Account created!");
                     break;
                 case 2:
                     System.out.print("Account Number: ");
-                    String accNum2 = scanner.nextLine();
+                    String accNum2=scanner.nextLine();
                     System.out.print("Amount: ");
-                    double amount = scanner.nextDouble();
+                    double amount=scanner.nextDouble();
                     if (bank.deposit(accNum2, amount)) {
                         System.out.println("Deposit successful!");
                     } else {
@@ -54,9 +54,9 @@ public class Main {
                     break;
                 case 3:
                     System.out.print("Account Number: ");
-                    String accNum3 = scanner.nextLine();
+                    String accNum3=scanner.nextLine();
                     System.out.print("Amount: ");
-                    double amount2 = scanner.nextDouble();
+                    double amount2=scanner.nextDouble();
                     if (bank.withdraw(accNum3, amount2)) {
                         System.out.println("Withdrawal successful!");
                     } else {
@@ -65,11 +65,11 @@ public class Main {
                     break;
                 case 4:
                     System.out.print("From Account: ");
-                    String fromAcc = scanner.nextLine();
+                    String fromAcc=scanner.nextLine();
                     System.out.print("To Account: ");
-                    String toAcc = scanner.nextLine();
+                    String toAcc=scanner.nextLine();
                     System.out.print("Amount: ");
-                    double amount3 = scanner.nextDouble();
+                    double amount3=scanner.nextDouble();
                     if (bank.transfer(fromAcc, toAcc, amount3)) {
                         System.out.println("Transfer successful!");
                     } else {
@@ -85,9 +85,9 @@ public class Main {
                     break;
                 case 6:
                     System.out.print("Account Number: ");
-                    String accNum4 = scanner.nextLine();
-                    Account acc = bank.findAccount(accNum4);
-                    if (acc != null) {
+                    String accNum4=scanner.nextLine();
+                    Account acc=bank.findAccount(accNum4);
+                    if (acc!=null) {
                         acc.displayDetails();
                     } else {
                         System.out.println("Account not found!");
@@ -101,7 +101,7 @@ public class Main {
                     break;
                 case 9:
                     Account richest = bank.getHighestBalanceAccount();
-                    if (richest != null) {
+                    if (richest!=null) {
                         System.out.println("Richest Account: " + richest.getAccountSummary());
                     } else {
                         System.out.println("No accounts found!");
