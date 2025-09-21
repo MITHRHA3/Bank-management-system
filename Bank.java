@@ -75,4 +75,14 @@ public class Bank {
     public boolean isFull() {
         return count >= accounts.length;
     }
+    
+    public String getAccountInfo(String accountNumber) {
+        Account account = findAccount(accountNumber);
+        if (account != null) {
+            return account.getAccountNumber() + " - " + 
+                   account.getHolderName() + " - " + 
+                   account.getBalanceString();
+        }
+        return "Account not found";
+    }
 }
