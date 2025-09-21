@@ -103,4 +103,15 @@ public class Bank {
         }
         return null;
     }
+    
+    public Account getHighestBalanceAccount() {
+        if (count == 0) return null;
+        Account highest = accounts[0];
+        for (int i = 1; i < count; i++) {
+            if (accounts[i].getBalance() > highest.getBalance()) {
+                highest = accounts[i];
+            }
+        }
+        return highest;
+    }
 }
