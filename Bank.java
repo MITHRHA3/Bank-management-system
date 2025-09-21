@@ -124,4 +124,12 @@ public class Bank {
         }
         return count;
     }
+    
+    public void printStatistics() {
+        System.out.println("Bank Statistics:");
+        System.out.println("Total Accounts: " + count);
+        System.out.println("Total Balance: $" + String.format("%.2f", getTotalBalance()));
+        System.out.println("Average Balance: $" + String.format("%.2f", getAverageBalance()));
+        System.out.println("Accounts with balance > $1000: " + getAccountsWithBalanceAbove(1000));
+    }
 }
