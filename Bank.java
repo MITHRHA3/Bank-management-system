@@ -142,4 +142,8 @@ public class Bank {
         }
         return emptyCount;
     }
+    
+    public int getCapacity() {
+        return accounts.length;
+    }
 }
