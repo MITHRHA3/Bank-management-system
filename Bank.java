@@ -114,4 +114,14 @@ public class Bank {
         }
         return highest;
     }
+    
+    public int getAccountsWithBalanceAbove(double amount) {
+        int count = 0;
+        for (int i = 0; i < this.count; i++) {
+            if (accounts[i].getBalance() > amount) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
