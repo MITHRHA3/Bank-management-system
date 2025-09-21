@@ -74,7 +74,11 @@ public class Main {
                     }
                     break;
                 case 5:
-                    bank.listAccounts();
+                    if (bank.isEmpty()) {
+                        System.out.println("No accounts found!");
+                    } else {
+                        bank.listAccounts();
+                    }
                     break;
                 case 6:
                     System.out.print("Account Number: ");
