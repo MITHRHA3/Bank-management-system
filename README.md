@@ -8,7 +8,7 @@ Simple Java console app to manage bank accounts with basic transactions and a su
 - **Summary**: show total balance across all accounts
 
 ### Requirements
-- Java 8 or later (JDK)
+- Java 24 or later (JDK)
 
 ### OOP concepts used
 - **Classes and Objects**: `Account` and `BankManagementSystem` (main program)
