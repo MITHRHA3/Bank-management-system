@@ -71,4 +71,8 @@ public class Bank {
     public int getAccountCount() {
         return count;
     }
+    
+    public boolean isFull() {
+        return count >= accounts.length;
+    }
 }
