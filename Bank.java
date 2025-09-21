@@ -132,4 +132,14 @@ public class Bank {
         System.out.println("Average Balance: $" + String.format("%.2f", getAverageBalance()));
         System.out.println("Accounts with balance > $1000: " + getAccountsWithBalanceAbove(1000));
     }
+    
+    public int getEmptyAccountsCount() {
+        int emptyCount = 0;
+        for (int i = 0; i < count; i++) {
+            if (accounts[i].isEmpty()) {
+                emptyCount++;
+            }
+        }
+        return emptyCount;
+    }
 }
