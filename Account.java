@@ -4,9 +4,9 @@ public class Account {
     private double balance;
     
     public Account(String accountNumber, String holderName, double initialDeposit) {
-        this.accountNumber = accountNumber;
-        this.holderName = holderName;
-        this.balance = initialDeposit;
+        this.accountNumber=accountNumber;
+        this.holderName=holderName;
+        this.balance=initialDeposit;
     }
     
     public String getAccountNumber() {
@@ -22,23 +22,23 @@ public class Account {
     }
     
     public boolean deposit(double amount) {
-        if (amount > 0 && amount <= 10000) {
-            balance += amount;
+        if (amount>0&&amount<=10000) {
+            balance+=amount;
             return true;
         }
         return false;
     }
     
     public boolean withdraw(double amount) {
-        if (amount > 0 && amount <= balance && amount <= 5000) {
-            balance -= amount;
+        if (amount>0 && amount<=balance&&amount<=5000) {
+            balance-=amount;
             return true;
         }
         return false;
     }
     
     public boolean transfer(Account targetAccount, double amount) {
-        if (amount > 0 && amount <= balance) {
+        if (amount>0 && amount<=balance) {
             if (this.withdraw(amount)) {
                 targetAccount.deposit(amount);
                 return true;
@@ -58,7 +58,7 @@ public class Account {
     }
     
     public boolean hasSufficientBalance(double amount) {
-        return balance >= amount;
+        return balance>=amount;
     }
     
     public String getAccountSummary() {
@@ -66,15 +66,15 @@ public class Account {
     }
     
     public boolean isValidAccountNumber() {
-        return accountNumber != null && accountNumber.length() >= 3;
+        return accountNumber!=null && accountNumber.length()>=3;
     }
     
     public boolean isEmpty() {
-        return balance == 0;
+        return balance==0;
     }
     
     public boolean isValidHolderName() {
-        return holderName != null && holderName.length() >= 2;
+        return holderName!=null && holderName.length() >= 2;
     }
     
     public String getAccountDetails() {
@@ -82,6 +82,6 @@ public class Account {
     }
     
     public boolean canTransfer(double amount) {
-        return amount > 0 && amount <= balance && amount <= 5000;
+        return amount>0 && amount<=balance && amount<=5000;
     }
 }
