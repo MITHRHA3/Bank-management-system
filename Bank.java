@@ -3,19 +3,19 @@ public class Bank {
     private int count;
     
     public Bank() {
-        accounts = new Account[100];
-        count = 0;
+        accounts=new Account[100];
+        count=0;
     }
     
     public void createAccount(String accountNumber, String holderName, double initialDeposit) {
-        if (count < accounts.length) {
-            accounts[count] = new Account(accountNumber, holderName, initialDeposit);
+        if (count<accounts.length) {
+            accounts[count]=new Account(accountNumber, holderName, initialDeposit);
             count++;
         }
     }
     
     public Account findAccount(String accountNumber) {
-        for (int i = 0; i < count; i++) {
+        for (int i=0;i<count;i++) {
             if (accounts[i].getAccountNumber().equals(accountNumber)) {
                 return accounts[i];
             }
@@ -24,32 +24,32 @@ public class Bank {
     }
     
     public boolean deposit(String accountNumber, double amount) {
-        Account account = findAccount(accountNumber);
-        if (account != null) {
+        Account account=findAccount(accountNumber);
+        if (account!=null) {
             return account.deposit(amount);
         }
         return false;
     }
     
     public boolean withdraw(String accountNumber, double amount) {
-        Account account = findAccount(accountNumber);
-        if (account != null) {
+        Account account=findAccount(accountNumber);
+        if (account!=null) {
             return account.withdraw(amount);
         }
         return false;
     }
     
     public boolean transfer(String fromAccount, String toAccount, double amount) {
-        Account from = findAccount(fromAccount);
-        Account to = findAccount(toAccount);
-        if (from != null && to != null) {
+        Account from=findAccount(fromAccount);
+        Account to=findAccount(toAccount);
+        if (from!=null&&to!=null) {
             return from.transfer(to, amount);
         }
         return false;
     }
     
     public void listAccounts() {
-        for (int i = 0; i < count; i++) {
+        for (int i=0; i<count;i++) {
             System.out.println(accounts[i].getAccountNumber() + " - " + 
                              accounts[i].getHolderName() + " - $" + 
                              accounts[i].getBalance());
@@ -57,15 +57,15 @@ public class Bank {
     }
     
     public double getTotalBalance() {
-        double total = 0;
-        for (int i = 0; i < count; i++) {
+        double total=0;
+        for (int i=0;i<count;i++) {
             total += accounts[i].getBalance();
         }
         return total;
     }
     
     public boolean accountExists(String accountNumber) {
-        return findAccount(accountNumber) != null;
+        return findAccount(accountNumber)!=null;
     }
     
     public int getAccountCount() {
@@ -73,21 +73,21 @@ public class Bank {
     }
     
     public boolean isFull() {
-        return count >= accounts.length;
+        return count>=accounts.length;
     }
     
     public boolean isEmpty() {
-        return count == 0;
+        return count==0;
     }
     
     public double getAverageBalance() {
-        if (count == 0) return 0;
+        if(count == 0)return 0;
         return getTotalBalance() / count;
     }
     
     public String getAccountInfo(String accountNumber) {
         Account account = findAccount(accountNumber);
-        if (account != null) {
+        if (account!=null) {
             return account.getAccountNumber() + " - " + 
                    account.getHolderName() + " - " + 
                    account.getBalanceString();
@@ -96,7 +96,7 @@ public class Bank {
     }
     
     public Account findAccountByHolder(String holderName) {
-        for (int i = 0; i < count; i++) {
+        for (int i=0; i<count;i++) {
             if (accounts[i].getHolderName().equalsIgnoreCase(holderName)) {
                 return accounts[i];
             }
@@ -104,9 +104,9 @@ public class Bank {
     }
     
     public Account getHighestBalanceAccount() {
-        if (count == 0) return null;
-        Account highest = accounts[0];
-        for (int i = 1; i < count; i++) {
+        if(count==0) return null;
+        Account highest=accounts[0];
+        for (inti = 1;i<count; i++) {
             if (accounts[i].getBalance() > highest.getBalance()) {
                 highest = accounts[i];
             }
@@ -115,8 +115,8 @@ public class Bank {
     }
     
     public int getAccountsWithBalanceAbove(double amount) {
-        int count = 0;
-        for (int i = 0; i < this.count; i++) {
+        int count=0;
+        for (int i=0;i<this.count;i++) {
             if (accounts[i].getBalance() > amount) {
                 count++;
             }
@@ -133,8 +133,8 @@ public class Bank {
     }
     
     public int getEmptyAccountsCount() {
-        int emptyCount = 0;
-        for (int i = 0; i < count; i++) {
+        int emptyCount=0;
+        for (int i=0; i<count;i++) {
             if (accounts[i].isEmpty()) {
                 emptyCount++;
             }
