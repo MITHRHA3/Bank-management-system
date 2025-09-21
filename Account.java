@@ -60,4 +60,8 @@ public class Account {
     public boolean hasSufficientBalance(double amount) {
         return balance >= amount;
     }
+    
+    public String getAccountSummary() {
+        return accountNumber + " - " + holderName + " - " + getBalanceString();
+    }
 }
