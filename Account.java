@@ -68,4 +68,8 @@ public class Account {
     public boolean isValidAccountNumber() {
         return accountNumber != null && accountNumber.length() >= 3;
     }
+    
+    public boolean isEmpty() {
+        return balance == 0;
+    }
 }
