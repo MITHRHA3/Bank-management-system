@@ -72,4 +72,8 @@ public class Account {
     public boolean isEmpty() {
         return balance == 0;
     }
+    
+    public boolean isValidHolderName() {
+        return holderName != null && holderName.length() >= 2;
+    }
 }
