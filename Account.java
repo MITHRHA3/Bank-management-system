@@ -52,4 +52,8 @@ public class Account {
         System.out.println("Holder: " + holderName);
         System.out.println("Balance: $" + balance);
     }
+    
+    public String getBalanceString() {
+        return String.format("$%.2f", balance);
+    }
 }
