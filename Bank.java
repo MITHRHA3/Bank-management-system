@@ -80,6 +80,11 @@ public class Bank {
         return count == 0;
     }
     
+    public double getAverageBalance() {
+        if (count == 0) return 0;
+        return getTotalBalance() / count;
+    }
+    
     public String getAccountInfo(String accountNumber) {
         Account account = findAccount(accountNumber);
         if (account != null) {
