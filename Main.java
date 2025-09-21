@@ -15,7 +15,8 @@ public class Main {
             System.out.println("7. Total Balance");
             System.out.println("8. Average Balance");
             System.out.println("9. Richest Account");
-            System.out.println("10. Exit");
+            System.out.println("10. Bank Statistics");
+            System.out.println("11. Exit");
             System.out.print("Choose: ");
             
             int choice = scanner.nextInt();
@@ -107,6 +108,9 @@ public class Main {
                     }
                     break;
                 case 10:
+                    bank.printStatistics();
+                    break;
+                case 11:
                     System.out.println("Goodbye!");
                     System.exit(0);
                     break;
