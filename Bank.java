@@ -100,8 +100,7 @@ public class Bank {
             if (accounts[i].getHolderName().equalsIgnoreCase(holderName)) {
                 return accounts[i];
             }
-        }
-        return null;
+        }        return null;
     }
     
     public Account getHighestBalanceAccount() {
@@ -145,5 +144,49 @@ public class Bank {
     
     public int getCapacity() {
         return accounts.length;
+    }
+    
+    public int getHighValueAccountsCount() {
+        int count = 0;
+        for (int i = 0; i < this.count; i++) {
+            if (accounts[i].isHighValue()) {
+                count++;
+            }
+        }
+        return count;
+    }
+    
+    public double getTotalInterest() {
+        double total = 0;
+        for (int i = 0; i < count; i++) {
+            total += accounts[i].calculateInterest();
+        }
+        return total;
+    }
+    
+    public void printAllAccountDetails() {
+        for (int i = 0; i < count; i++) {
+            System.out.println(accounts[i].getAccountDetails());
+        }
+    }
+    
+    public int getPremiumAccountsCount() {
+        int count = 0;
+        for (int i = 0; i < this.count; i++) {
+            if (accounts[i].getAccountType().equals("Premium")) {
+                count++;
+            }
+        }
+        return count;
+    }
+    
+    public int getLoanEligibleAccountsCount() {
+        int count = 0;
+        for (int i = 0; i < this.count; i++) {
+            if (accounts[i].isEligibleForLoan()) {
+                count++;
+            }
+        }
+        return count;
     }
 }

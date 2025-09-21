@@ -84,4 +84,32 @@ public class Account {
     public boolean canTransfer(double amount) {
         return amount > 0 && amount <= balance && amount <= 5000;
     }
+    
+    public boolean isHighValue() {
+        return balance >= 10000;
+    }
+    
+    public double getInterestRate() {
+        return balance >= 50000 ? 0.05 : 0.02;
+    }
+    
+    public double calculateInterest() {
+        return balance * getInterestRate();
+    }
+    
+    public boolean canWithdraw(double amount) {
+        return amount > 0 && amount <= balance && amount <= 5000;
+    }
+    
+    public String getAccountType() {
+        return balance >= 50000 ? "Premium" : "Standard";
+    }
+    
+    public boolean isEligibleForLoan() {
+        return balance >= 10000;
+    }
+    
+    public double getMinimumBalance() {
+        return 100.0;
+    }
 }

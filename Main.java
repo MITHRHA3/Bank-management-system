@@ -16,7 +16,9 @@ public class Main {
             System.out.println("8. Average Balance");
             System.out.println("9. Richest Account");
             System.out.println("10. Bank Statistics");
-            System.out.println("11. Exit");
+            System.out.println("11. Total Interest");
+            System.out.println("12. Premium Accounts");
+            System.out.println("13. Exit");
             System.out.print("Choose: ");
             
             int choice = scanner.nextInt();
@@ -111,6 +113,13 @@ public class Main {
                     bank.printStatistics();
                     break;
                 case 11:
+                    System.out.println("Total Interest: $" + String.format("%.2f", bank.getTotalInterest()));
+                    break;
+                case 12:
+                    System.out.println("Premium Accounts: " + bank.getPremiumAccountsCount());
+                    System.out.println("Loan Eligible Accounts: " + bank.getLoanEligibleAccountsCount());
+                    break;
+                case 13:
                     System.out.println("Goodbye!");
                     System.exit(0);
                     break;
