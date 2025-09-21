@@ -37,7 +37,7 @@ public class Main {
                     if (bank.deposit(accNum2, amount)) {
                         System.out.println("Deposit successful!");
                     } else {
-                        System.out.println("Deposit failed!");
+                        System.out.println("Deposit failed! Check amount or account.");
                     }
                     break;
                 case 3:
